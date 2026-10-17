@@ -1599,124 +1599,44 @@ p {
     margin-top: 18px
 }
 
-.ab-footer {
-    background: radial-gradient(ellipse at 86% 4%, rgba(0, 128, 128, .18), transparent 35%), #0d2232;
-    color: #b5c4ca;
-    padding: 54px 0 24px
-}
+.ab-footer {}
 
-.ab-footer-layout {
-    display: grid;
-    grid-template-columns: 1.45fr .76fr .8fr 1fr;
-    gap: 34px;
-    padding-bottom: 34px;
-    border-bottom: 1px solid rgba(255, 255, 255, .13)
-}
+.ab-footer-layout {}
 
-.ab-footer-brand {
-    display: grid;
-    align-content: start;
-    gap: 16px;
-    max-width: 370px
-}
+.ab-footer-brand {}
 
-.ab-footer-logo {
-    width: 190px;
-    height: 54px;
-    border-radius: 10px
-}
+.ab-footer-logo {}
 
-.ab-footer-logo img {
-    object-fit: contain
-}
+.ab-footer-logo img {}
 
-.ab-footer-brand p {
-    max-width: 36ch;
-    font-size: 17px;
-    line-height: 1.65;
-    margin: 0;
-    color: #a6b8be
-}
+.ab-footer-brand p {}
 
-.ab-footer-contact {
-    display: grid;
-    gap: 8px
-}
+.ab-footer-contact {}
 
-.ab-footer-contact span {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    color: #c0cdd0;
-    font-size: 17px
-}
+.ab-footer-contact span {}
 
-.ab-footer-contact .ab-icon {
-    width: 16px;
-    height: 16px;
-    color: #75cbc0
-}
+.ab-footer-contact .ab-icon {}
 
-.ab-footer-nav {
-    display: grid;
-    align-content: start;
-    gap: 11px
-}
+.ab-footer-nav {}
 
 .ab-footer-nav strong,
-.ab-footer-action>strong {
-    margin: 3px 0 7px;
-    color: #fff;
-    font-size: 17px
-}
+.ab-footer-action>strong {}
 
-.ab-footer-nav a {
-    width: fit-content;
-    color: #b6c7cc;
-    font-size: 17px;
-    transition: color .2s, transform .2s
-}
+.ab-footer-nav a {}
 
-.ab-footer-nav a:hover {
-    color: #8fd7cd;
-    transform: translateX(2px)
-}
+.ab-footer-nav a:hover {}
 
-.ab-footer-action {
-    display: grid;
-    align-content: start;
-    gap: 11px
-}
+.ab-footer-action {}
 
-.ab-footer-action>strong {
-    margin: 3px 0 0
-}
+.ab-footer-action>strong {}
 
-.ab-footer-action p {
-    color: #a6b8be;
-    font-size: 17px;
-    line-height: 1.55;
-    margin: 0
-}
+.ab-footer-action p {}
 
-.ab-footer-action .ab-btn {
-    width: fit-content;
-    margin-top: 5px;
-    border-radius: 14px
-}
+.ab-footer-action .ab-btn {}
 
-.ab-footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    padding-top: 21px;
-    font-size: 17px;
-    color: #82969f
-}
+.ab-footer-bottom {}
 
-.ab-footer-bottom span:first-child {
-    color: #b6c5c9
-}
+.ab-footer-bottom span:first-child {}
 
 .ab-reveal {
     opacity: 0;
