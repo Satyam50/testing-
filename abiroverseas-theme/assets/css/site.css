@@ -1,0 +1,232 @@
+/* Shared site footer. Loaded after page-specific styles so it stays consistent everywhere. */
+.ab-footer {
+    background: radial-gradient(ellipse at 86% 4%, rgba(0, 128, 128, .18), transparent 35%), #0d2232;
+    color: #b5c4ca;
+    padding: 54px 0 24px;
+}
+
+.ab-footer a {
+    text-decoration: none;
+}
+
+.ab-footer .ab-icon {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ab-footer .ab-wrap {
+    width: min(var(--ab-max, 1220px), calc(100% - 56px));
+    margin-inline: auto;
+}
+
+.ab-footer-layout {
+    display: grid;
+    grid-template-columns: 1.45fr .76fr .8fr 1fr;
+    gap: 34px;
+    padding-bottom: 34px;
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+.ab-footer-brand {
+    display: grid;
+    align-content: start;
+    gap: 16px;
+    max-width: 370px;
+}
+
+.ab-footer-logo {
+    display: flex;
+    width: 190px;
+    height: 54px;
+    flex: none;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.ab-footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ab-footer-brand p {
+    max-width: 36ch;
+    margin: 0;
+    color: #a6b8be;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.ab-footer-contact {
+    display: grid;
+    gap: 8px;
+}
+
+.ab-footer-contact span {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #c0cdd0;
+    font-size: 17px;
+}
+
+.ab-footer-contact .ab-icon {
+    width: 16px;
+    height: 16px;
+    color: #75cbc0;
+}
+
+.ab-footer-nav {
+    display: grid;
+    align-content: start;
+    gap: 11px;
+}
+
+.ab-footer-nav strong,
+.ab-footer-action>strong {
+    margin: 3px 0 7px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.ab-footer-nav a {
+    width: fit-content;
+    color: #b6c7cc;
+    font-size: 17px;
+    transition: color .2s, transform .2s;
+}
+
+.ab-footer-nav a:hover {
+    color: #8fd7cd;
+    transform: translateX(2px);
+}
+
+.ab-footer-action {
+    display: grid;
+    align-content: start;
+    gap: 11px;
+}
+
+.ab-footer-action>strong {
+    margin: 3px 0 0;
+}
+
+.ab-footer-action p {
+    margin: 0;
+    color: #a6b8be;
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.ab-footer-action .ab-btn {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 5px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: #f58220;
+    padding: 11px 16px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    box-shadow: 0 8px 20px rgba(245, 130, 32, .22);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.ab-footer-action .ab-btn:hover {
+    transform: translateY(-1px);
+    background: #dd6e13;
+    color: #fff;
+}
+
+.ab-footer-action .ab-btn .ab-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.ab-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 21px;
+    color: #82969f;
+    font-size: 17px;
+}
+
+.ab-footer-bottom span:first-child {
+    color: #b6c5c9;
+}
+
+@media (max-width: 850px) {
+    .ab-footer .ab-wrap {
+        width: min(var(--ab-max, 1220px), calc(100% - 42px));
+    }
+
+    .ab-footer-layout {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        gap: 27px;
+    }
+
+    .ab-footer-action {
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    .ab-footer-action p {
+        grid-column: 1;
+    }
+
+    .ab-footer-action .ab-btn {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .ab-footer .ab-wrap {
+        width: calc(100% - 36px);
+    }
+
+    .ab-footer-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 26px 18px;
+    }
+
+    .ab-footer-brand,
+    .ab-footer-action {
+        grid-column: 1 / -1;
+    }
+
+    .ab-footer-action {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .ab-footer-action p,
+    .ab-footer-action .ab-btn {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .ab-footer-logo {
+        width: 170px;
+        height: 48px;
+    }
+
+    .ab-footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
