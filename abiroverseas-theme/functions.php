@@ -2,7 +2,7 @@
 /** Abiroverseas — WordPress theme functions. */
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'AB_THEME_VERSION', '1.0.8' );
+define( 'AB_THEME_VERSION', '1.0.9' );
 
 add_action( 'after_setup_theme', 'ab_theme_setup' );
 function ab_theme_setup() {
@@ -57,10 +57,25 @@ function ab_enqueue_assets() {
     if ( is_singular( 'knowledge' ) ) { $style = 'knowledge.css'; $script = 'knowledge-single.js'; }
     elseif ( is_post_type_archive( 'knowledge' ) || is_tax( array( 'knowledge_hub', 'knowledge_material', 'knowledge_topic' ) ) ) { $style = 'knowledge.css'; $script = 'knowledge-hub.js'; }
     elseif ( is_page() ) {
-        $template = get_page_template_slug( get_queried_object_id() );
-        if ( 'page-templates/template-home.php' === $template ) { $style = 'home.css'; $script = 'home.js'; }
-        elseif ( 'page-templates/template-about.php' === $template ) { $style = 'about.css'; $script = 'about.js'; }
-        elseif ( 'page-templates/template-material.php' === $template ) { $style = 'material.css'; $script = 'material.js'; }
+        /*
+         * Resolve the page layout by slug first, then by assigned template.
+         * This keeps page assets loading even if WordPress returns an empty
+         * template slug (for example after a page/template assignment changes).
+         */
+        $page_id = get_queried_object_id();
+        $slug = get_post_field( 'post_name', $page_id );
+        $template = get_page_template_slug( $page_id );
+
+        if ( is_front_page() || 'home' === $slug || 'page-templates/template-home.php' === $template ) {
+            $style = 'home.css';
+            $script = 'home.js';
+        } elseif ( 'about' === $slug || 'page-templates/template-about.php' === $template ) {
+            $style = 'about.css';
+            $script = 'about.js';
+        } elseif ( in_array( $slug, array( 'hdpe', 'material', 'materials' ), true ) || 'page-templates/template-material.php' === $template ) {
+            $style = 'material.css';
+            $script = 'material.js';
+        }
     }
     if ( $style ) { wp_enqueue_style( 'ab-page-layout', $base . '/assets/css/' . $style, array(), $version ); }
     wp_enqueue_style( 'ab-site-footer', $base . '/assets/css/site.css', $style ? array( 'ab-page-layout' ) : array(), $version );
