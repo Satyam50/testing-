@@ -2970,3 +2970,18 @@ input[type="submit"],
         transition: none !important
     }
 }
+
+
+/* Home banner background matched to the About page banner. */
+.ab-home-slide--original,
+.ab-home-slide--final,
+.ab-home-slide--background {
+    background: radial-gradient(ellipse at 12% 42%, rgba(0, 128, 128, .09), transparent 38%),
+        linear-gradient(118deg, #f7faf9 0%, #f3f7f6 55%, #eaf1f2 100%);
+}
+
+/* Keep the home banner background consistent with About; do not layer the old photo over it. */
+.ab-home-slide--background .ab-home-slide-bg {
+    display: none;
+}
+
