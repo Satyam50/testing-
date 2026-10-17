@@ -308,3 +308,72 @@
   .ab-nav-links { right:-18px; left:-18px; padding-right:18px; padding-left:18px; }
   .ab-nav-menu>li>a { font-size:16px; }
 }
+
+
+/* WordPress primary menu dropdowns (shared across every template). */
+.ab-nav-menu .sub-menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: -14px;
+    z-index: 120;
+    display: none;
+    min-width: 220px;
+    margin: 0;
+    padding: 9px;
+    list-style: none;
+    border: 1px solid var(--ab-line, #dce5e5);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--ab-shadow, 0 14px 36px rgba(23, 44, 57, .12));
+}
+
+.ab-nav-menu li:hover > .sub-menu,
+.ab-nav-menu li:focus-within > .sub-menu {
+    display: block;
+}
+
+.ab-nav-menu .sub-menu li {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ab-nav-menu .sub-menu a {
+    display: block;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: #40515e;
+    font-size: 16px;
+    line-height: 1.4;
+    text-decoration: none;
+    white-space: normal;
+}
+
+.ab-nav-menu .sub-menu a:hover,
+.ab-nav-menu .sub-menu .current-menu-item > a {
+    background: #eaf3f2;
+    color: #008080;
+}
+
+@media (max-width: 850px) {
+    .ab-nav-menu .sub-menu,
+    .ab-nav-menu li:hover > .sub-menu,
+    .ab-nav-menu li:focus-within > .sub-menu {
+        position: static;
+        display: block;
+        min-width: 0;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background: #f7faf9;
+        padding: 2px 0 8px 13px;
+        box-shadow: none;
+    }
+
+    .ab-nav-menu .sub-menu a {
+        padding: 9px 10px;
+        font-size: 15px;
+    }
+}
