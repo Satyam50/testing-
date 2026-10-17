@@ -2985,3 +2985,18 @@ input[type="submit"],
     display: none;
 }
 
+/* Add the subtle left-side concentric circle used on the About page banner. */
+.ab-home-hero:after {
+    content: "";
+    position: absolute;
+    width: 540px;
+    height: 540px;
+    border: none;
+    border-radius: 50%;
+    left: -210px;
+    bottom: -240px;
+    box-shadow: 0 0 0 1px rgba(0, 128, 128, .06),
+        0 0 0 42px rgba(0, 128, 128, .025),
+        0 0 0 88px rgba(0, 128, 128, .018);
+    pointer-events: none;
+}
