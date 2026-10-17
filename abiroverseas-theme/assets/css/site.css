@@ -377,3 +377,15 @@
         font-size: 15px;
     }
 }
+
+
+/* Shared top-bar material ticker animation. Keep this in the global stylesheet
+   because the header is rendered on every page, not only the About page. */
+@keyframes ab-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ab-ticker-items { animation-duration: 60s; }
+}
